@@ -1,15 +1,5 @@
-let typeOfData = 1;
-console.log(typeof(typeOfData));
+let firstString = prompt('Write something');
+let secondtString = prompt('Write something');
+let thirdString = prompt('Write something');
 
-typeOfData = "kdfkjs";
-console.log(typeof(typeOfData));
-
-typeOfData = [1,2,3];
-console.log(typeof(typeOfData));
-
-typeOfData = 1;
-let secondNumber = 2;
-console.log(typeof(typeOfData !== secondNumber));
-
-let thirdVariable;
-console.log(typeof(thirdVariable));
+console.log(`you wrote: ${firstString} ${secondtString} ${thirdString}`);
