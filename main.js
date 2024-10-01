@@ -1,9 +1,37 @@
-let threeDigitsNumber = prompt('Type 3digits number');
-let userNumber = +threeDigitsNumber;
+let birthYear = prompt("Type the year your were born");
+let town = prompt("Type the town you live in");
+let favSport = prompt("Type your favourite sport");
 
-let firstDigit = Math.floor(userNumber / 100);
-let secondDigit = Math.floor(userNumber % 100 / 10);
-let thirdDigit = userNumber % 10;
+let message = "";
 
-firstDigit === secondDigit && secondDigit === thirdDigit ? console.log("Yes, it's true, all digits are equal") : console.log("No, it's not true, all digits are not equal");
-firstDigit === secondDigit || secondDigit === thirdDigit || firstDigit === thirdDigit ? console.log("Yes, there are the same digits") : console.log("None of these digits are equal");
+let userAge = 2024 - (+birthYear); 
+
+if (birthYear === null) {
+    message += (` Шкода, що Ви не захотіли ввести свій рік народження`)
+} else {
+    message += (`Currently you ${userAge} years old`);
+}
+
+if (town === "Київ") {
+    message += (` Ти живеш у столиці України`);
+} else if (town === "Вашингтон") {
+    message += (` Ти живеш у столиці USA`);
+} else if (town === "Лондон") {
+    message += (` Ти живеш у столиці Великобританії`);
+} else if (town === null) {
+    message += (` Шкода, що Ви не захотіли ввести свій город`)
+} else {
+    message += (` Ти живеш у місті ${town}`);
+}
+
+if (favSport === "бокс") {
+    message += (` Круто! Хочеш стати Кононом МакГрегором?`);
+} else if (favSport === "йога") {
+    message += (` Круто! Хочеш стати сбалансованим?`);
+} else if (favSport === "пілатес") {
+    message += (` Круто! Хочеш займатися за програмою Джозефа Пілатеса?`);
+} else if (favSport === null) {
+    message += (` Шкода, що Ви не захотіли ввести свій улюблений вид спорту`)
+}
+
+alert(message);
