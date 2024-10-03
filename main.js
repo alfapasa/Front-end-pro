@@ -1,20 +1,21 @@
-//Дано ціле число (ввести через 'prompt').
-//З'ясувати, чи просто воно (простим називається число, більше 1, що не має інших дільників, крім 1 і себе).
 
-let number = +prompt("Type the number");
-let isPrime = true;
+let str = "hello world";
+let arrToDel = ['l', 'd'];
 
-for (let i = 2; i < number && number > 1; i++) {
-    if (number % i === 0) {
-        isPrime = false;
-        break;
-    };
+
+function eraseToDelete (str, arrToDel) {
+    let arrStr = str.split("");
+    
+    let newArr = "";
+
+    for (let i = 0; i < arrStr.length; i++) {
+        let character = arrStr[i];
+
+        if (!arrToDel.includes(character)) {
+            newArr += character; 
+        }
+    }
+    return newArr;
 }
 
-if (isPrime) {
-    console.log(`${number} is a prime number`);
-} else {
-    console.log(`${number} isn't a prime number`);
-};
-
-
+console.log(eraseToDelete(str, arrToDel));
