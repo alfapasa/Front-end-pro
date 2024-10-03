@@ -1,9 +1,7 @@
-//Один долар коштує 26 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів
+//Дано ціле число N (ввести через prompt). Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа N
 
-let hrn = 26;
-let convert;
+let number = +prompt('Type the number');
 
-for (let i = 10; i <= 100; i += 10) {
-    convert = i * hrn;
-    console.log(convert);
+for (let i = 1; i <= 100 && i * i < number; i++) {
+    console.log(i);
 }
