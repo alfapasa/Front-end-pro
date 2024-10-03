@@ -1,4 +1,9 @@
+//Один долар коштує 26 гривень. Вивести дані з розрахунком вартості 10, 20, 30... 100 доларів
 
-for (let i = 20; i <= 30; i = i + 0.5) {
-    console.log(i)
-};
+let hrn = 26;
+let convert;
+
+for (let i = 10; i <= 100; i += 10) {
+    convert = i * hrn;
+    console.log(convert);
+}
