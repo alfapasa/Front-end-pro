@@ -1,28 +1,16 @@
-//Дано масив з елементами різних типів. 
-//Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву.
+//Реалізуйте функцію removeElement(array, item), щоб видалити елемент item з масиву array.
 
-let arr = prompt("Type array");
 
-function mean(arr) {
-    let newArr = [];
+const array = [1, 3, 4, 6, 2, 5, 7];
+let item = 4;
 
-    for (let i = 0; i <arr.length; i++) {
-        
-            if (!isNaN(arr[i])) {
-                newArr.push(+arr[i]);
-            } else {
-                continue;
-            }
-    }
-    let result;
-    let summ = 0;
-    for (i = 0; i < newArr.length; i++) {
-        summ += newArr[i];
-        result = summ / newArr.length;
-
-    }
-
-    return result;
+function removeElement(array, item) {
+    const newArr = array.filter(function(number) {
+        return number !== item;
+    })
+    return newArr;
 };
 
-console.log(mean(arr));
+let resultArr = removeElement(array, item);
+
+console.log(resultArr);
