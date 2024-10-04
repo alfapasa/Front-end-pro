@@ -1,16 +1,20 @@
-//Реалізуйте функцію removeElement(array, item), щоб видалити елемент item з масиву array.
+//Написати функцію, яка приймає 1 параметр. Та скадае значення з тим, що передали перший раз і т. д. Все це із замиканнями, наприклад:
 
+function sumCount () {
+    let total = 0;
 
-const array = [1, 3, 4, 6, 2, 5, 7];
-let item = 4;
-
-function removeElement(array, item) {
-    const newArr = array.filter(function(number) {
-        return number !== item;
-    })
-    return newArr;
+    return function (num) {
+        total += num;
+        return total;
+    }
 };
 
-let resultArr = removeElement(array, item);
+const sum = sumCount();
 
-console.log(resultArr);
+console.log(sum(4)); // 4
+
+console.log(sum(6)); // 10
+
+console.log(sum(10)); // 20
+
+console.log(sum(7)); // 27
