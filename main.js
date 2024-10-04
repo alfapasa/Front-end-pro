@@ -1,10 +1,18 @@
-//Створити функцію для розрахунку добутку двох чисел, що викликається так: name(5)(2).
-//Функція повинна повертати результат (у середині функції не має бути консоль лога!)
+//Цикл на кожній ітерації пропонує через prompt ввести число більше 100 (але максимум 10 ітерацій циклу) .
+//Якщо відвідувач ввів число менше ста – попросити ввести ще раз, і таке інше.
+//Якщо користувач вводить більше ста, текст або цикл закінчує всі ітерації,
+//то функція виводить в консоль останній введення користувача і завершує функцію.
 
-function curryProduct(firstNumber) {
-    return function(secondNumber) {
-        return firstNumber * secondNumber
+function num() {
+    for (let i = 0; i < 10; i++) {
+        let theNum = +prompt("Type the number bigger than 100");
+        if (theNum < 100) {
+            console.log("Try again");
+        } else if ((theNum > 100) || (isNaN(theNum)) ) {
+            console.log(theNum);
+            break;
+        }
     }
-};
+}
 
-console.log(curryProduct(5)(2));
+const result = num();
