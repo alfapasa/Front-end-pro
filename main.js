@@ -1,21 +1,28 @@
+//Дано масив з елементами різних типів. 
+//Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву.
 
-let str = "hello world";
-let arrToDel = ['l', 'd'];
+let arr = prompt("Type array");
 
+function mean(arr) {
+    let newArr = [];
 
-function eraseToDelete (str, arrToDel) {
-    let arrStr = str.split("");
-    
-    let newArr = "";
-
-    for (let i = 0; i < arrStr.length; i++) {
-        let character = arrStr[i];
-
-        if (!arrToDel.includes(character)) {
-            newArr += character; 
-        }
+    for (let i = 0; i <arr.length; i++) {
+        
+            if (!isNaN(arr[i])) {
+                newArr.push(+arr[i]);
+            } else {
+                continue;
+            }
     }
-    return newArr;
-}
+    let result;
+    let summ = 0;
+    for (i = 0; i < newArr.length; i++) {
+        summ += newArr[i];
+        result = summ / newArr.length;
 
-console.log(eraseToDelete(str, arrToDel));
+    }
+
+    return result;
+};
+
+console.log(mean(arr));
